@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "icon": {
+      "type": "lucide",
+      "name": "user"
+    },
+    "text": "Principal Software Developer"
+  },
+  {
+    "id": 2,
+    "icon": {
+      "type": "lucide",
+      "name": "earth"
+    },
+    "text": "Made in Ireland"
+  }
+]
