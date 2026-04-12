@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "jonathan-meaney-dev",
+  "compatibility_date": "2026-04-12",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+  },
+}
