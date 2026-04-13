@@ -7,6 +7,7 @@ import Card from "../components/Card.astro";
 import Icon from "../components/Icon.astro";
 import ImageGlow from "../components/ImageGlow.astro";
 import Layout from "../layouts/Layout.astro";
+import { formatDate } from "../utils/format-date";
 
 const profilePicture =
 	"https://secure.gravatar.com/avatar/c9d5edd6f8dc1957f5fdda7ff304d4ae?d=retro&s=240";
@@ -118,7 +119,7 @@ const { Content: About } = await render(about!);
 								<div class="post-header">
 									<h3>{post.data.title}</h3>
 									<span class="post-date">
-										{post.data.createdAt.toLocaleDateString()}
+										{formatDate(post.data.createdAt)}
 									</span>
 								</div>
 								<span>{post.data.description}</span>
@@ -148,7 +149,7 @@ const { Content: About } = await render(about!);
 								<div class="post-header">
 									<h3>{project.data.title}</h3>
 									<span class="post-date">
-										{project.data.date.toLocaleDateString()}
+										{formatDate(project.data.date)}
 									</span>
 								</div>
 								<span>{project.data.description}</span>

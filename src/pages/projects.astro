@@ -6,6 +6,7 @@ import { openGraph } from "../data/site";
 import Card from "../components/Card.astro";
 import Icon from "../components/Icon.astro";
 import Layout from "../layouts/Layout.astro";
+import { formatDate } from "../utils/format-date";
 
 const projects = await getCollection("projects");
 ---
@@ -36,7 +37,7 @@ const projects = await getCollection("projects");
 					<a href={`/projects/${project.id}`} class="post-container">
 						<div class="post-header">
 							<h3>{project.data.title}</h3>
-							<span class="post-date">{project.data.date.toLocaleDateString()}</span>
+							<span class="post-date">{formatDate(project.data.date)}</span>
 						</div>
 						<span>{project.data.description}</span>
 					</a>

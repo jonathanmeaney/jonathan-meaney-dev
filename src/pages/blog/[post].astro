@@ -8,6 +8,7 @@ import type { GetStaticPaths } from "astro";
 import Card from "../../components/Card.astro";
 import ImageGlow from "../../components/ImageGlow.astro";
 import Layout from "../../layouts/Layout.astro";
+import { formatDate } from "../../utils/format-date";
 
 /**
  * Estimates the time it takes to read a post in minutes based on:
@@ -95,7 +96,7 @@ const { Content, headings } = await render(post);
 						<h1 class="no-mt article-h1">{post.data.title}</h1>
 					</div>
 					<div class="article-info">
-						<span>{post.data.createdAt.toLocaleDateString()}</span>
+						<span>{formatDate(post.data.createdAt)}</span>
 						<span>/</span>
 						<span
 							>{timeToRead(post)} minute{timeToRead(post) === 1 ? "" : "s"} to read</span
