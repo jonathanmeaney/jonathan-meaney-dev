@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
 import { formatDate } from "../utils/format-date";
 
 const posts = await getCollection("posts", (post) => post.data.draft !== true);
-const tags = posts.flatMap((post) => post.data.tags.map((tag) => tag.id));
+const tags = posts.flatMap((post) => post.data.tags);
 ---
 <Layout
   title={openGraph.blog.title || "Blog"}
@@ -42,7 +42,7 @@ const tags = posts.flatMap((post) => post.data.tags.map((tag) => tag.id));
 			</div>
 			<div class="content-container">
 				{posts.sort((a, b) => b.data.createdAt.getTime() - a.data.createdAt.getTime()).map((post) => (
-					<a href={`/blog/${post.id}`} class="post-container" data-tags={post.data.tags.map((tag) => tag.id).join(",")}>
+          <a href={`/blog/${post.id}`} class="post-container" data-tags={post.data.tags.join(",")}>
 						<div class="post-header">
 							<h3>{post.data.title}</h3>
               <span class="post-date">{formatDate(post.data.createdAt)}</span>

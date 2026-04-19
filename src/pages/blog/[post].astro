@@ -102,7 +102,7 @@ const { Content, headings } = await render(post);
 							>{timeToRead(post)} minute{timeToRead(post) === 1 ? "" : "s"} to read</span
 						>
 						<span>/</span>
-						<span>Tags: {post.data.tags.map((tag) => tag.id).join(", ")}</span>
+						<span>Tags: {post.data.tags.join(", ")}</span>
 					</div>
 				</div>
 			</div>
